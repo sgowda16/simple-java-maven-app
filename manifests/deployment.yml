@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: simplejavamavenapp 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: simplejavamavenapp
+  template:
+    metadata:
+      labels:
+        app: simplejavamavenapp 
+    spec:
+      containers:
+        - name: simplejavamavenapp 
+          image: devops111.azurecr.io/simplejavamavenapp
+          ports:
+          - containerPort: 8080
